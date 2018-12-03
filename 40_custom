@@ -7,7 +7,7 @@ exec tail -n +3 $0
 # Kali-linux
   menuentry "kali-linux-1.1.0a-amd64" {
     set isofile="/boot/bootiso/kali-linux-xfce-2018.4-amd64.iso"
-    loopback loop (hd0,5)$isofile
+    loopback loop (hd0,5)$isofile #change (hd0,5) with disk, use sudo fdisk -l
     linux (loop)/live/vmlinuz boot=live findiso=$isofile noconfig=sudo username=root hostname=kali
     initrd (loop)/live/initrd.img
   }
